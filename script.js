@@ -439,7 +439,7 @@ function createSection4(){
     body.appendChild(section);
 }
 
-let countdownTime = 10 * 60;
+let countdownTime = 30 * 60;
 
 function updateTimer() {
     let minutes = Math.floor(countdownTime / 60);
@@ -457,15 +457,16 @@ function updateTimer() {
     }
 }
 
-setInterval(startTimer, 1000);
-function startTimer(){
-    const timerVar = document.querySelector('#timerId');
-    if(timerVar != undefined)
-        setInterval(updateTimer, 1000);
-}
+// setInterval(startTimer, 1000);
+// function startTimer(){
+//     const timerVar = document.querySelector('#timerId');
+//     if(timerVar != undefined)
+//         setInterval(updateTimer, 1000+1000+500);
+// }
 
+setInterval(updateTimer, 1000);
 // Start the countdown timer
-updateTimer();
+// updateTimer();
 
 function isValid(str,pat){
     const array = str.split(' ');
