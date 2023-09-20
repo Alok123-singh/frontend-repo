@@ -1,0 +1,269 @@
+.{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@keyframes animatedBackground {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 100% 0;
+    }
+  }
+
+body{
+    background-image: url("images/seven.jpg");
+    background-position: 0px 0px;
+    background-repeat: repeat;
+    background-size: 80%;
+    animation: animatedBackground 10s linear infinite alternate;
+    background-color: #d5dbdb;
+    /* color: white; */
+}
+
+input{
+    width: 6rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 5px;
+    cursor: pointer;
+    /* border-color: green; */
+}
+
+#box{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 2rem;
+    flex-wrap: wrap;
+}
+
+#welcomeId{
+    cursor: pointer;
+}
+
+#currencyId{
+    margin-top: 18px;
+    padding-right: 5rem;
+    font-size: larger;
+}
+
+#transactionId{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap-reverse;
+}
+
+#metaId{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+#inParaId{
+    margin-right: 7px;
+}
+
+#inId{
+    color: #29ba54;
+    font-size: 22px;
+}
+
+#outParaId{
+    margin-right: 7px;
+    margin-left: 18px;
+}
+
+#outId{
+    color: #e6053a;
+    font-size: 22px;
+}
+
+#interestParaId{
+    margin-right: 7px;
+    margin-left: 18px;
+}
+
+#interestId{
+    color: #29ba54;
+    font-size: 22px;
+}
+
+#sortId{
+    margin-top: 54px;
+    padding-right: 300px;
+    cursor: pointer;
+}
+
+#timerId{
+    margin-top: 54px;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: start;
+}
+
+.inner_navbar{
+    margin: 13px; /* equivalent to margin-top: 13px */
+    height: 0px;
+}
+
+.innerBox{
+    color: white;
+    /* display: inline-block */
+}
+
+.imageOne{
+    height: 2px;
+    width: 120px;
+}
+
+.imageTwo{
+    height: 80px;
+    width: 120px;
+}
+
+.submitOne{
+    font-size: medium;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.userClass{
+
+    color: white;
+    display: flex;
+    justify-content: end;
+    margin-right: 401px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.userFormClass{
+    color: white;
+    display: flex;
+    justify-content: end;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+    cursor: pointer;
+}
+
+.balanceClass{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    cursor: default;
+}
+
+.currentClass{
+    margin-left: 10px;
+}
+
+.currencyClass{
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.dateClass{
+    margin-left: 10px;
+}
+
+.scrollClass{
+    overflow-y: scroll;
+    /* margin-left: 6rem; */
+    padding: 10px 20px;
+    width: 400px;
+    height: 260px;
+    background-color: #877be3;
+    border-radius: 1rem;
+}
+
+.trClass{
+    display: flex;
+    justify-content:space-between;
+    margin-top: 30px;
+    margin-bottom : 40px;
+}
+
+.dwClass{
+    /* margin-left: 1rem; */
+    /* margin-top: -20px; */
+    color: white;
+    background-color: #08803e;
+    height: 20px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    border-radius: 11px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.wwClass{
+    background-color : #e6053a;
+    color: white;
+    height: 20px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    border-radius: 11px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.amountClass{
+    padding-left: 3rem;
+    cursor: default;
+    /* margin-top: -20px; */
+}
+
+.moneyClass{
+    margin-top: 1rem;
+    /* margin-left: -7rem; */
+    background-color: #e69a47;
+    border-radius: 10px;
+    height: 5rem;
+    width: 23rem
+}
+
+.serviceClass{
+    padding-top: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.loanClass{
+    margin-top: 1rem;
+    /* margin-left: -7rem; */
+    background-color: #2c992c;
+    border-radius: 10px;
+    height: 5rem;
+    width: 23rem
+}
+
+.closeAccountClass{
+    margin-top: 1rem;
+    /* margin-left: -7rem; */
+    background-color: #FD3B10;
+    border-radius: 10px;
+    height: 5rem;
+    width: 23rem
+}
+
+.interestClass{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.metaClass{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 7rem;
+    margin-top: 2rem;
+}
