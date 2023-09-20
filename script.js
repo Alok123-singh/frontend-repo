@@ -440,12 +440,12 @@ function createSection4(){
 }
 
 let countdownTime = 10 * 60;
-const timerVar = document.querySelector('#timerId');
 
 function updateTimer() {
     let minutes = Math.floor(countdownTime / 60);
     let seconds = countdownTime % 60;
 
+    const timerVar = document.querySelector('#timerId');
     // Display the time in the "timer" div
     timerVar.innerHTML = 'You will be logged out in ' + minutes + ":" + seconds;
     
@@ -457,8 +457,12 @@ function updateTimer() {
     }
 }
 
-if(timerVar != undefined)
-    setInterval(updateTimer, 1000);
+setInterval(startTimer, 1000);
+function startTimer(){
+    const timerVar = document.querySelector('#timerId');
+    if(timerVar != undefined)
+        setInterval(updateTimer, 1000);
+}
 
 // Start the countdown timer
 updateTimer();
