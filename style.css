@@ -122,7 +122,7 @@ input{
 }
 
 #timerId{
-    margin-top: 54px;
+    margin-top: 50px;
     padding-right: 1rem;
     display: flex;
     justify-content: start;
@@ -352,7 +352,7 @@ input{
     }
     #timerId{
         padding-right: 0px;
-        margin-top: 0px;
+        /* margin-top: 8rem; */
     }
     #metaId{
         margin-bottom: 3rem;
@@ -430,7 +430,7 @@ input{
     }
     #timerId{
         padding-right: 0px;
-        margin-top: 0px;
+        /* margin-top: 7rem; */
     }
     #metaId{
         margin-bottom: 3rem;
