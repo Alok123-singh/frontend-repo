@@ -314,6 +314,14 @@ input{
 }
 
 @media only screen and (max-width: 652px){
+    *{
+        font-size: 20px;
+    }
+    .serviceClass{
+        text-align: center;
+        padding-top: 8px;
+        /* margin-top: 5px; */
+    }
     .userFormClass{
         flex-direction: column;
         width: 100%;
@@ -345,6 +353,7 @@ input{
     #currencyId{
         padding-right: 0px;
         width: 100%;
+        margin-top: 1rem;
     }
     #sortId{
         padding-right: 0px;
@@ -352,7 +361,7 @@ input{
     }
     #timerId{
         padding-right: 0px;
-        /* margin-top: 8rem; */
+        margin-top: 60px;
     }
     #metaId{
         margin-bottom: 3rem;
@@ -423,6 +432,7 @@ input{
     #currencyId{
         padding-right: 0px;
         width: 100%;
+        margin-top: 1rem;
     }
     #sortId{
         padding-right: 0px;

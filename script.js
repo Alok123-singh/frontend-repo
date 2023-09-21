@@ -70,7 +70,7 @@ function showDetails(name,pass){
     if(name !== ""){
         let valid = false;
         users.forEach( function(user){
-            if(isValid(user.username,name) && user.password == pass){
+            if((isValid(user.username,name) || user.username === name) && user.password == pass){
                 console.log(user.username);
                 modifySection1(user.username);
                 createSection2(user.currentBalance);
@@ -234,7 +234,7 @@ function createMoneySection(user,div){
 
             let valid = false;
             users.forEach(function(userElement){
-                if(isValid(userElement.username,transferTo)){
+                if(isValid(userElement.username,transferTo) || userElement.username === transferTo){
                     if(user.currentBalance+100 > amount){
                         user.currentBalance -= amount;
                         userElement.currentBalance += amount;
@@ -340,7 +340,7 @@ function createCloseAccountSection(user,div){
         const confirmPIN = inputTwo.value;
 
         users.forEach(function(){
-            if(isValid(user.username,confirmUser)){
+            if(isValid(user.username,confirmUser) || user.username === confirmUser){
                 const index = users.indexOf(user);
                 users.splice(index,1);
                 clearCurrentHTML();
