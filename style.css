@@ -1,4 +1,4 @@
-.{
+*{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -43,6 +43,24 @@ input{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+
+#userSubmitId{
+    margin-bottom: 1rem;
+}
+
+#passwordSubmitId{
+    margin-bottom: 1rem;
+}
+
+#createUserId{
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* padding-bottom: 1rem; */
 }
 
 #welcomeId{
@@ -50,7 +68,6 @@ input{
 }
 
 #currencyId{
-    margin-top: 18px;
     padding-right: 5rem;
     font-size: larger;
 }
@@ -66,6 +83,7 @@ input{
     justify-content: space-around;
     color: white;
     flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 #inParaId{
@@ -112,7 +130,7 @@ input{
 
 .inner_navbar{
     margin: 13px; /* equivalent to margin-top: 13px */
-    height: 0px;
+    height: 15px;
 }
 
 .innerBox{
@@ -141,27 +159,36 @@ input{
 
     color: white;
     display: flex;
-    justify-content: end;
-    margin-right: 401px;
-    margin-bottom: 1rem;
+    justify-content: center;
+    /* margin-right: 401px; */
+    margin-top: 1rem;
     cursor: pointer;
 
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
-.cuClass{
+#cuClass{
     display: flex;
     flex-wrap: wrap;
-    word-wrap: break-word;
+    /* word-wrap: break-word; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 4rem;
 }
 
 .userFormClass{
     color: white;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     margin-right: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     cursor: pointer;
+}
+
+.labelClass{
+    margin-left: 1rem;
 }
 
 .balanceClass{
@@ -191,7 +218,7 @@ input{
     /* margin-left: 6rem; */
     padding: 10px 20px;
     width: 400px;
-    height: 260px;
+    height: 270px;
     background-color: #877be3;
     border-radius: 1rem;
 }
@@ -274,6 +301,7 @@ input{
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 .metaClass{
@@ -281,8 +309,85 @@ input{
     justify-content: space-around;
     padding-left: 7rem;
     margin-top: 2rem;
+    margin-bottom: 2rem;
     /* flex-wrap: wrap; */
 }
 
-
+@media only screen and (max-width: 815px) {
+    .userFormClass{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 20px;
+        margin-right: 0px;
+    }
+    #createNewUserId{
+        flex-direction: column;
+    }
+    .userClass input{
+        width: 100%;
+        margin-bottom: 7px;
+    }
+    #cuClass{
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 0px;
+    }
+    #box{
+        margin: 0px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #currencyId{
+        padding-right: 0px;
+        width: 100%;
+    }
+    #sortId{
+        padding-right: 0px;
+        margin-top: 3rem;
+    }
+    #timerId{
+        padding-right: 0px;
+        margin-top: 0px;
+    }
+    #metaId{
+        margin-bottom: 3rem;
+    }
+    .metaClass{
+        padding-left: 0px;
+    }
+    .apClass{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .moneyClass{
+        width: 80%;
+    }
+    .loanClass{
+        width: 80%;
+    }
+    .closeAccountClass{
+        width: 80%;
+    }
+    .scrollClass{
+        width: 80%;
+        margin-top: 1rem;
+    }
+    .balanceClass{
+        justify-content: center;
+        
+    }
+    .interestClass{
+        margin-top: 1rem;
+    }
+    
+}
 

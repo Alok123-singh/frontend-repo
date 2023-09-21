@@ -29,11 +29,16 @@ createForm.addEventListener('click',function(e){
     const username = input1.value;
     const password = input2.value;
 
-    console.log(`${username} ${password}`);
+    if(username != "" && password != ""){
+        console.log(`${username} ${password}`);
 
-    const user = new createUser(username,password,[2000],2000);
-    users.push(user);
-    alert('User created!');
+        const user = new createUser(username,password,[2000],2000);
+        users.push(user);
+        alert('User created!');
+    }
+    else{
+        alert('Empty fields recieved!');
+    }
 })
 
 submit.addEventListener('click',function(e){
@@ -122,7 +127,7 @@ function createSection3(user){
 
     section.setAttribute('id','transactionId');
     div1.classList.add('scrollClass');
-
+    div2.classList.add('apClass');
     createInnerSection1(user,div1);
     createInnerSection2(user,div2);
 
