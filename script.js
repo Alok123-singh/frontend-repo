@@ -31,10 +31,20 @@ createForm.addEventListener('click',function(e){
 
     if(username != "" && password != ""){
         console.log(`${username} ${password}`);
+        let isPresent = false;
+        users.forEach(function(user){
+            if(user.username === username)
+                isPresent = true;
+        })
 
-        const user = new createUser(username,password,[2000],2000);
-        users.push(user);
-        alert('User created!');
+        if(isPresent){
+            alert('User already exist with entered username');
+        }
+        else{
+            const user = new createUser(username,password,[2000],2000);
+            users.push(user);
+            alert('User created!');
+        }
     }
     else{
         alert('Empty fields recieved!');

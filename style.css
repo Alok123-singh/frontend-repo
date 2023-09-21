@@ -24,7 +24,7 @@ body{
 }
 
 input{
-    width: 6rem;
+    width: 10em;
     border-radius: 10px;
     text-align: center;
     margin-left: 5px;
@@ -55,7 +55,7 @@ input{
 }
 
 #createUserId{
-    height: 20px;
+    height: 21px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -332,6 +332,9 @@ input{
     }
     #createNewUserId{
         flex-direction: column;
+    }
+    #createUserId{
+        height: 23px;
     }
     .userClass input{
         width: 100%;
