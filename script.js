@@ -19,7 +19,25 @@ const submit = document.querySelector('.submitOne');
 const body = document.querySelector('body');
 const createForm = document.querySelector('#createUserId');
 
+const sort = document.querySelector("#sortId");
+
 const users = [user1,user2,user3,user4];
+let isSorted = false;
+
+sort.addEventListener('click',function(e){
+    const name = username.value;
+
+    users.forEach(function(user){
+        if(user.username.toUpperCase() === name.toUpperCase() || isValid(user.username,name)){
+            if(!isSorted){
+                user.transaction.sort();
+                isSorted = true;
+            }
+            user.transaction.reverse();
+        }
+    });
+
+})
 
 createForm.addEventListener('click',function(e){
     e.preventDefault();
