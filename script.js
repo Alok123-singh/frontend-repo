@@ -296,9 +296,11 @@ function createLoanSection(user,div){
     inputTwo.addEventListener('click',function(e){
         e.preventDefault();
 
-        const amount = inputOne.value;
-        if(amount > 0)
-        user.transaction.unshift(amount);
+        const amount = parseInt(inputOne.value);
+        if(amount > 0){
+            user.transaction.unshift(amount);
+            user.amount += amount;
+        }
 
         clearCurrentHTML();
         createNewHTML(user);
