@@ -57,7 +57,7 @@ submit.addEventListener('click',function(e){
     // console.log(typeof username.value,typeof password.value);
     const balanceSection = document.querySelector('.balanceClass');
     if(!body.contains(balanceSection)) showDetails(username.value,password.value);
-    else alert('You are already signed in');
+    else alert('You are already signed in!');
     
 });
 
@@ -96,6 +96,7 @@ function showDetails(name,pass){
                 createSection3(user);
                 createSection4(user);
                 valid = true;
+                password.value = '';
             }
         })
         if(!valid) alert('Enter valid details!!');
@@ -271,6 +272,9 @@ function createMoneySection(user,div){
             })
             if(!valid) alert('Wrong details recieved!! Enter valid user.')
         }
+        else{
+            alert('Empty fields recieved!');
+        }
     })
 }
 
@@ -307,13 +311,22 @@ function createLoanSection(user,div){
         e.preventDefault();
 
         const amount = parseInt(inputOne.value);
-        if(amount > 0){
-            user.transaction.unshift(amount);
-            user.currentBalance += amount;
+        if(inputOne.value === ""){
+            alert('Empty fields recieved!');
+        }
+        else{
+            if(amount > 0){
+                user.transaction.unshift(amount);
+                user.currentBalance += amount;
+                clearCurrentHTML();
+                createNewHTML(user);
+            }
+            else{
+                alert('Invalid amount entered!');
+            }
         }
 
-        clearCurrentHTML();
-        createNewHTML(user);
+        
     });
 }
 
@@ -360,14 +373,26 @@ function createCloseAccountSection(user,div){
 
         const confirmUser = inputOne.value;
         const confirmPIN = inputTwo.value;
-
-        users.forEach(function(){
-            if(isValid(user.username,confirmUser) || user.username.toUpperCase() === confirmUser.toUpperCase()){
-                const index = users.indexOf(user);
-                users.splice(index,1);
-                clearCurrentHTML();
+        console.log(confirmUser);
+        
+        if(confirmUser === ""){
+            alert('Empty fields recieved!');
+        }
+        else{
+            let isClosed = false;
+            users.forEach(function(){
+                if(isValid(user.username,confirmUser) || user.username.toUpperCase() === confirmUser.toUpperCase()){
+                    const index = users.indexOf(user);
+                    users.splice(index,1);
+                    clearCurrentHTML();
+                    isClosed = true;
+                }
+            })
+            if(!isClosed){
+                alert('Invalid details recieved!');
             }
-        })
+        }
+
     })
 
 }
