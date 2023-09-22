@@ -425,6 +425,7 @@ input{
     }
     #inParaId{
         margin-right: 7px;
+        margin-left: 18px;
         font-size: 18px;
     }
     
@@ -433,6 +434,7 @@ input{
         font-size: 22px;
         font-weight: bold;
         font-size: 18px;
+        margin-left: 15px;
     }
     
     #outParaId{
