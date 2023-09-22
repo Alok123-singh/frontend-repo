@@ -326,7 +326,7 @@ input{
     /* flex-wrap: wrap; */
 }
 
-@media only screen and (max-width: 404px){
+@media only screen and (max-width: 394px){
     #outId{
         padding-left: 10px;
     }
@@ -342,7 +342,7 @@ input{
     .serviceClass{
         text-align: center;
         padding-top: 8px;
-        /* margin-top: 5px; */
+        margin-top: -4px;
     }
     .userFormClass{
         flex-direction: column;
@@ -465,7 +465,152 @@ input{
         font-size: 18px;
     }
     .submitOne{
-        font-size: 15px;
+        font-size: 23px;
+        margin-top: 4px;
+    }
+}
+
+@media only screen and ((min-width: 395px) and (max-width: 404px)){
+    #outId{
+        padding-left: 10px;
+    }
+    #interestId{
+        padding-left: 15px;
+    }
+    *{
+        font-size: 20px;
+    }
+    input{
+        width: 7rem;
+    }
+    .serviceClass{
+        text-align: center;
+        padding-top: 8px;
+        /* margin-top: 5px; */
+    }
+    .userFormClass{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 40px;
+    }
+    #welcomeId{
+        font-size: large;
+    }
+    #createNewUserId{
+        flex-direction: column;
+    }
+    #createUserId{
+        height: 23px;
+    }
+    .userClass input{
+        width: 100%;
+        margin-bottom: 7px;
+    }
+    #cuClass{
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 0px;
+    }
+    #box{
+        margin: 0px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #currencyId{
+        padding-right: 0px;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    #sortId{
+        padding-right: 0px;
+        margin-top: 3rem;
+    }
+    #timerId{
+        /* padding-right: 0px; */
+        margin-top: 60px;
+        margin-right: 0px;
+    }
+    #metaId{
+        margin-bottom: 3rem;
+    }
+    .metaClass{
+        padding-left: 0px;
+    }
+    .apClass{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .moneyClass{
+        width: 93%;
+    }
+    .loanClass{
+        width: 93%;
+    }
+    .closeAccountClass{
+        width: 93%;
+    }
+    .scrollClass{
+        width: 90%;
+        margin-top: 1rem;
+    }
+    .balanceClass{
+        justify-content: center;
+        
+    }
+    .interestClass{
+        margin-top: 1rem;
+    }
+    #inParaId{
+        margin-right: 7px;
+        margin-left: 18px;
+        font-size: 18px;
+    }
+    
+    #inId{
+        color: #29ba54;
+        font-size: 22px;
+        font-weight: bold;
+        font-size: 18px;
+        margin-left: 15px;
+    }
+    
+    #outParaId{
+        margin-right: 7px;
+        margin-left: 18px;
+        font-size: 18px;
+    }
+    
+    #outId{
+        color: #e6053a;
+        font-size: 22px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    #interestParaId{
+        margin-right: 7px;
+        margin-left: 18px;
+        font-size: 18px;
+    }
+    
+    #interestId{
+        color: #29ba54;
+        font-size: 22px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .submitOne{
+        font-size: 23px;
+        /* margin-right: 1px; */
     }
 }
 
@@ -594,6 +739,9 @@ input{
     }
     input{
         width: 7rem;
+    }
+    .trClass{
+        padding-bottom: 20px;
     }
     .serviceClass{
         text-align: center;
