@@ -7,10 +7,10 @@ function createUser(username,password,transaction,curr){
     return this;
 }
 
-const user1 = new createUser('Stephen Strange',1111,[1427,400,230,-30,-22,-87,500,242,-10,-5000,200,52],67421);
-const user2 = new createUser('Iron Man',2222,[10,40,280,-300,-2,-14,543,-64,25,46,67,-54],9625925);
-const user3 = new createUser('Captain America',3333,[1000,450,9475,1427,-50,-650,145,670,-650,650,49,60],32462);
-const user4 = new createUser('Venom Mandal',4444,[3000,130,-450,30,-224,-8,960,-540,280,-478,40,100],89242);
+const user1 = new createUser('Ss',1111,[1427,400,230,-30,-22,-87,500,242,-10,-5000,200,52],67421);
+const user2 = new createUser('im',2222,[10,40,280,-300,-2,-14,543,-64,25,46,67,-54],9625925);
+const user3 = new createUser('Ca',3333,[1000,450,9475,1427,-50,-650,145,670,-650,650,49,60],32462);
+const user4 = new createUser('Vm',4444,[3000,130,-450,30,-224,-8,960,-540,280,-478,40,100],89242);
 
 const username = document.querySelector('#userSubmit');
 const password = document.querySelector('#passwordSubmit')
@@ -53,11 +53,13 @@ createForm.addEventListener('click',function(e){
     }
 })
 
+let sortUser = '';
 submit.addEventListener('click',function(e){
     e.preventDefault();
     console.log(username.value,password.value);
     // console.log(typeof username.value,typeof password.value);
     const balanceSection = document.querySelector('.balanceClass');
+    sortUser = username.value;
     if(!body.contains(balanceSection)) showDetails(username.value,password.value);
     else alert('You are already signed in!');
     
@@ -91,14 +93,14 @@ function showDetails(name,pass){
     if(name !== ""){
         let valid = false;
         users.forEach( function(user){
-            if((isValid(user.username,name) || user.username.toUpperCase() === name.toUpperCase()) && user.password == pass){
+            if(user.username.toUpperCase() === name.toUpperCase() && user.password == pass){
                 console.log(user.username);
                 modifySection1(user.username);
                 createSection2(user.currentBalance);
                 createSection3(user);
                 createSection4(user);
                 valid = true;
-                // username.value = '';
+                username.value = '';
                 password.value = '';
             }
         })
@@ -258,7 +260,7 @@ function createMoneySection(user,div){
 
             let valid = false;
             users.forEach(function(userElement){
-                if(isValid(userElement.username,transferTo) || userElement.username.toUpperCase() === transferTo.toUpperCase()){
+                if(userElement.username.toUpperCase() === transferTo.toUpperCase()){
                     if(user.currentBalance+100 > amount){
                         user.currentBalance -= amount;
                         userElement.currentBalance += amount;
@@ -387,7 +389,7 @@ function createCloseAccountSection(user,div){
         else{
             let isClosed = false;
             users.forEach(function(){
-                if(isValid(user.username,confirmUser) || user.username.toUpperCase() === confirmUser.toUpperCase()){
+                if(user.username.toUpperCase() === confirmUser.toUpperCase()){
                     const index = users.indexOf(user);
                     users.splice(index,1);
                     clearCurrentHTML();
@@ -506,15 +508,13 @@ function createSection4(user){
         const name = username.value;
         console.log('sort clicked!');
     
-        if(user.username.toUpperCase() === name.toUpperCase() || isValid(user.username,name)){
-            if(!isSorted){
-                user.transaction.sort();
-                isSorted = true;
-            }
-            else{
-                user.transaction.sort((a,b) => b-a);
-                isSorted = false;
-            }
+        if(!isSorted){
+            user.transaction.sort();
+            isSorted = true;
+        }
+        else{
+            user.transaction.sort((a,b) => b-a);
+            isSorted = false;
         }
         clearCurrentHTML();
         createNewHTML(user);
