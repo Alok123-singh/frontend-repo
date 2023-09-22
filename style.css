@@ -235,8 +235,10 @@ input{
 .trClass{
     display: flex;
     justify-content:space-between;
-    margin-top: 30px;
-    margin-bottom : 40px;
+    margin-top: 23px;
+    /* margin-bottom : 40px; */
+    border-bottom: 1px double black;
+    padding-bottom: 23px;
 }
 
 .dwClass{
