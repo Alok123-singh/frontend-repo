@@ -457,7 +457,7 @@ function createSection4(user){
     innerDiv3.setAttribute('id','timerId');
 
     innerDiv2.innerHTML = '↓Sort';
-    innerDiv3.innerHTML = 'You will be logged out in 05:00';
+    innerDiv3.innerHTML = 'You will be logged out in 15:00';
 
     innerDiv2.addEventListener('click',function(e){
         e.preventDefault();
