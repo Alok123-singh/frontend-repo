@@ -391,7 +391,7 @@ function createInnerSection2(user,div){
 
 }
 
-function createInnerMeta(div){
+function createInnerMeta(user,div){
     const innerDiv1 = document.createElement('div');
     const innerDiv2 = document.createElement('div');
     const innerDiv3 = document.createElement('div');
@@ -427,12 +427,16 @@ function createInnerMeta(div){
     p5.setAttribute('id','interestParaId');
     p6.setAttribute('id','interestId');
     
+    let inVar = user.currentBalance * (35 / 760);
+    let outVar = user.currentBalance * (22 / 654);
+    let interestVar = user.currentBalance * (14 / 876);
+
     p1.innerHTML = 'IN';
-    p2.innerHTML = '5020 ¥';
+    p2.innerHTML = `${inVar.toFixed(2)} ¥`;
     p3.innerHTML = 'OUT';
-    p4.innerHTML = '1180 ¥';
+    p4.innerHTML = `${outVar.toFixed(2)} ¥`;
     p5.innerHTML = 'INTEREST';
-    p6.innerHTML = '59.4 ¥';
+    p6.innerHTML = `${interestVar.toFixed(2)} ¥`;
 }
 
 function createSection4(user){
@@ -440,7 +444,7 @@ function createSection4(user){
     section.setAttribute('id','metaId');
 
     const innerDiv1 = document.createElement('div');
-    createInnerMeta(innerDiv1);
+    createInnerMeta(user,innerDiv1);
 
     const innerDiv2 = document.createElement('div');
     const innerDiv3 = document.createElement('div');
@@ -480,7 +484,7 @@ function createSection4(user){
     body.appendChild(section);
 }
 
-let countdownTime = 15 * 60;
+let countdownTime = 30 * 60;
 
 function updateTimer() {
     let minutes = Math.floor(countdownTime / 60);

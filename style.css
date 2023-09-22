@@ -423,7 +423,46 @@ input{
     .interestClass{
         margin-top: 1rem;
     }
+    #inParaId{
+        margin-right: 7px;
+        font-size: 18px;
+    }
     
+    #inId{
+        color: #29ba54;
+        font-size: 22px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    #outParaId{
+        margin-right: 7px;
+        margin-left: 18px;
+        font-size: 18px;
+    }
+    
+    #outId{
+        color: #e6053a;
+        font-size: 22px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    #interestParaId{
+        margin-right: 7px;
+        margin-left: 18px;
+        font-size: 18px;
+    }
+    
+    #interestId{
+        color: #29ba54;
+        font-size: 22px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .submitOne{
+        font-size: 15px;
+    }
 }
 
 @media only screen and ((min-width: 405px) and (max-width: 652px)){
@@ -520,6 +559,29 @@ input{
         margin-top: 1rem;
     }
     
+    /* #inId{
+        color: #29ba54;
+        font-size: 22px;
+        font-weight: bold;
+        font-size: 18px;
+    } */
+    
+    #outId{
+        color: #e6053a;
+        font-size: 22px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    
+    #interestId{
+        color: #29ba54;
+        font-size: 22px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    .submitOne{
+        font-size: 15px;
+    }
 } 
 
 @media only screen and ((min-width: 653px) and (max-width: 825px)) {
@@ -599,11 +661,16 @@ input{
     .interestClass{
         margin-top: 1rem;
     }
-    
+    .submitOne{
+        font-size: 15px;
+    }
 }
 
 @media only screen and ((min-width: 826px) and (max-width: 1022px)) {
     #currencyId{
         padding-right: 5rem;
+    }
+    .submitOne{
+        font-size: 15px;
     }
 }
