@@ -43,6 +43,8 @@ createForm.addEventListener('click',function(e){
         else{
             const user = new createUser(username,password,[2000],2000);
             users.push(user);
+            input1.value = '';
+            input2.value = '';
             alert('User created!');
         }
     }
@@ -96,6 +98,7 @@ function showDetails(name,pass){
                 createSection3(user);
                 createSection4(user);
                 valid = true;
+                username.value = '';
                 password.value = '';
             }
         })
@@ -249,7 +252,7 @@ function createMoneySection(user,div){
         const transferTo = inputOne.value;
         const amount = parseInt(inputTwo.value);
         
-        if(transferTo !== ""){
+        if(transferTo !== "" && inputTwo.value !== ""){
             console.log(`TransferTo : ${transferTo} and Amount : ${amount}`);
             console.log(`Types : ${typeof transferTo} ${typeof amount}`);
 
@@ -271,6 +274,9 @@ function createMoneySection(user,div){
                 }
             })
             if(!valid) alert('Wrong details recieved!! Enter valid user.')
+            
+            inputOne.value = '';
+            inputTwo.value = '';
         }
         else{
             alert('Empty fields recieved!');
@@ -325,7 +331,7 @@ function createLoanSection(user,div){
                 alert('Invalid amount entered!');
             }
         }
-
+        inputOne.value = '';
         
     });
 }
@@ -375,7 +381,7 @@ function createCloseAccountSection(user,div){
         const confirmPIN = inputTwo.value;
         console.log(confirmUser);
         
-        if(confirmUser === ""){
+        if(confirmUser === "" || confirmPIN === ""){
             alert('Empty fields recieved!');
         }
         else{
@@ -391,6 +397,9 @@ function createCloseAccountSection(user,div){
             if(!isClosed){
                 alert('Invalid details recieved!');
             }
+
+            inputOne.value = '';
+            inputTwo.value = '';
         }
 
     })
