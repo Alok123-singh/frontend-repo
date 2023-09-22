@@ -299,7 +299,7 @@ function createLoanSection(user,div){
         const amount = parseInt(inputOne.value);
         if(amount > 0){
             user.transaction.unshift(amount);
-            user.amount += amount;
+            user.currentBalance += amount;
         }
 
         clearCurrentHTML();
