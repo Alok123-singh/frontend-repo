@@ -24,7 +24,7 @@ body{
 }
 
 input{
-    width: 10em;
+    width: 9rem;
     border-radius: 10px;
     text-align: center;
     margin-left: 5px;
@@ -317,6 +317,9 @@ input{
     *{
         font-size: 20px;
     }
+    input{
+        width: 7rem;
+    }
     .serviceClass{
         text-align: center;
         padding-top: 8px;
@@ -381,16 +384,16 @@ input{
         flex-wrap: wrap;
     }
     .moneyClass{
-        width: 80%;
+        width: 90%;
     }
     .loanClass{
-        width: 80%;
+        width: 90%;
     }
     .closeAccountClass{
-        width: 80%;
+        width: 90%;
     }
     .scrollClass{
-        width: 80%;
+        width: 90%;
         margin-top: 1rem;
     }
     .balanceClass{
