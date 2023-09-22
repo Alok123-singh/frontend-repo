@@ -7,10 +7,10 @@ function createUser(username,password,transaction,curr){
     return this;
 }
 
-const user1 = new createUser('Stephen Strange',1111,[1427,400,230,-30,-22,-87],67421);
-const user2 = new createUser('Iron Man',2222,[10,40,280,-300,-2,-14],9625925);
-const user3 = new createUser('Captain America',3333,[1000,450,9475,1427,-50,-650],5462);
-const user4 = new createUser('Venom Mandal',4444,[3000,130,-450,30,-224,-8],4242);
+const user1 = new createUser('Stephen Strange',1111,[1427,400,230,-30,-22,-87,500,242,-10,-5000,200,52],67421);
+const user2 = new createUser('Iron Man',2222,[10,40,280,-300,-2,-14,543,-64,25,46,67,-54],9625925);
+const user3 = new createUser('Captain America',3333,[1000,450,9475,1427,-50,-650,145,670,-650,650,49,60],5462);
+const user4 = new createUser('Venom Mandal',4444,[3000,130,-450,30,-224,-8,960,-540,280,-478,40,100],4242);
 
 const username = document.querySelector('#userSubmit');
 const password = document.querySelector('#passwordSubmit')
