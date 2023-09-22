@@ -70,9 +70,12 @@ submit.addEventListener('click',function(e){
     else {
         if(username.value === "" || password.value === "")
             alert('Empty fields recieved!');
-        else
+        else{
             alert('Enter valid details!');
+        }
     }
+    username.value = '';
+    password.value = '';
     
 });
 
@@ -111,12 +114,12 @@ function showDetails(name,pass){
                 createSection3(user);
                 createSection4(user);
                 valid = true;
-                username.value = '';
-                password.value = '';
             }
         })
         if(!valid) alert('Enter valid details!!');
     }
+    username.value = '';
+    password.value = '';
 }
 
 function createSection2(balance){
@@ -287,14 +290,13 @@ function createMoneySection(user,div){
                 }
             })
             if(!valid) alert('Wrong details recieved!! Enter valid user.')
-            
-            inputOne.value = '';
-            inputTwo.value = '';
         }
         else{
             alert('Empty fields recieved!');
         }
-    })
+    });
+    inputOne.value = '';
+    inputTwo.value = '';
 }
 
 function createLoanSection(user,div){
@@ -344,9 +346,8 @@ function createLoanSection(user,div){
                 alert('Invalid amount entered!');
             }
         }
-        inputOne.value = '';
-        
     });
+    inputOne.value = '';
 }
 
 function createCloseAccountSection(user,div){
@@ -411,11 +412,11 @@ function createCloseAccountSection(user,div){
                 alert('Invalid details recieved!');
             }
 
-            inputOne.value = '';
-            inputTwo.value = '';
         }
 
-    })
+    });
+    inputOne.value = '';
+    inputTwo.value = '';
 
 }
 

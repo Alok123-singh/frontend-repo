@@ -209,7 +209,9 @@ input{
     box-shadow: 0 3px #999;
 }
 
-.submitOne:hover {background-color: #3456b3}
+.submitOne:hover {
+    background-color: white;
+}
 
 .submitOne:active {
   background-color: #3456b3;
