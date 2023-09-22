@@ -242,7 +242,7 @@ input{
     color: whitesmoke;
     background-color: #08803e;
     height: 20px;
-    width: 90px;
+    width: 120px;
     display: flex;
     justify-content: center;
     border-radius: 11px;
@@ -255,7 +255,7 @@ input{
     background-color : #e6053a;
     color: whitesmoke;
     height: 20px;
-    width: 90px;
+    width: 120px;
     display: flex;
     justify-content: center;
     border-radius: 11px;
