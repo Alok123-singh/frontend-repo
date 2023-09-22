@@ -19,25 +19,7 @@ const submit = document.querySelector('.submitOne');
 const body = document.querySelector('body');
 const createForm = document.querySelector('#createUserId');
 
-const sort = document.querySelector("#sortId");
-
 const users = [user1,user2,user3,user4];
-let isSorted = false;
-
-sort.addEventListener('click',function(e){
-    const name = username.value;
-
-    users.forEach(function(user){
-        if(user.username.toUpperCase() === name.toUpperCase() || isValid(user.username,name)){
-            if(!isSorted){
-                user.transaction.sort();
-                isSorted = true;
-            }
-            user.transaction.reverse();
-        }
-    });
-
-})
 
 createForm.addEventListener('click',function(e){
     e.preventDefault();
@@ -75,6 +57,11 @@ submit.addEventListener('click',function(e){
     showDetails(username.value,password.value);
 });
 
+// const sortButton = document.querySelector("#sortId");
+let isSorted = false;
+
+
+
 function modifySection1(username){
     const section = document.querySelector('.inner_navbar');
     section.innerHTML = `Welcome back, ${username}`;
@@ -103,7 +90,7 @@ function showDetails(name,pass){
                 modifySection1(user.username);
                 createSection2(user.currentBalance);
                 createSection3(user);
-                createSection4();
+                createSection4(user);
                 valid = true;
             }
         })
@@ -211,7 +198,7 @@ function createNewHTML(user){
     modifySection1(user.username);
     createSection2(user.currentBalance);
     createSection3(user);
-    createSection4();
+    createSection4(user);
 }
 
 function createMoneySection(user,div){
@@ -259,6 +246,7 @@ function createMoneySection(user,div){
         
         if(transferTo !== ""){
             console.log(`TransferTo : ${transferTo} and Amount : ${amount}`);
+            console.log(`Types : ${typeof transferTo} ${typeof amount}`);
 
             let valid = false;
             users.forEach(function(userElement){
@@ -447,7 +435,7 @@ function createInnerMeta(div){
     p6.innerHTML = '59.4 ¥';
 }
 
-function createSection4(){
+function createSection4(user){
     const section = document.createElement('section');
     section.setAttribute('id','metaId');
 
@@ -471,10 +459,28 @@ function createSection4(){
     innerDiv2.innerHTML = '↓Sort';
     innerDiv3.innerHTML = 'You will be logged out in 05:00';
 
+    innerDiv2.addEventListener('click',function(e){
+        e.preventDefault();
+        const name = username.value;
+    
+        if(user.username.toUpperCase() === name.toUpperCase() || isValid(user.username,name)){
+            if(!isSorted){
+                user.transaction.sort();
+                isSorted = true;
+            }
+            else{
+                user.transaction.sort((a,b) => b-a);
+                isSorted = false;
+            }
+        }
+        clearCurrentHTML();
+        createNewHTML(user);
+    });
+
     body.appendChild(section);
 }
 
-let countdownTime = 30 * 60;
+let countdownTime = 15 * 60;
 
 function updateTimer() {
     let minutes = Math.floor(countdownTime / 60);

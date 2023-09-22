@@ -67,6 +67,7 @@ input{
 
 #welcomeId{
     cursor: pointer;
+    font-size: larger;
 }
 
 #currencyId{
@@ -206,6 +207,7 @@ input{
 
 .currentClass{
     margin-left: 10px;
+    font-size: larger;
 }
 
 .currencyClass{
@@ -217,6 +219,7 @@ input{
 
 .dateClass{
     margin-left: 10px;
+    font-size: larger;
 }
 
 .scrollClass{
@@ -339,6 +342,9 @@ input{
         justify-content: center;
         align-items: center;
         padding: 0px 40px;
+    }
+    #welcomeId{
+        font-size: large;
     }
     #createNewUserId{
         flex-direction: column;
