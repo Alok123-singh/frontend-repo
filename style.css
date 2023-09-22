@@ -237,7 +237,7 @@ input{
     justify-content:space-between;
     margin-top: 23px;
     /* margin-bottom : 40px; */
-    border-bottom: 1px double black;
+    border-bottom: 1px solid black;
     padding-bottom: 23px;
 }
 
