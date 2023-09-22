@@ -53,8 +53,12 @@ createForm.addEventListener('click',function(e){
 
 submit.addEventListener('click',function(e){
     e.preventDefault();
-    // console.log(username.value,password.value);
-    showDetails(username.value,password.value);
+    console.log(username.value,password.value);
+    // console.log(typeof username.value,typeof password.value);
+    const balanceSection = document.querySelector('.balanceClass');
+    if(!body.contains(balanceSection)) showDetails(username.value,password.value);
+    else alert('You are already signed in');
+    
 });
 
 // const sortButton = document.querySelector("#sortId");
