@@ -160,6 +160,21 @@ input{
     width: 60px;
     height: 30px;
     cursor: pointer;
+    text-align: center;
+    outline: none;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 3px #999;
+}
+
+.submitOne:hover {background-color: #3456b3}
+
+.submitOne:active {
+  background-color: #3456b3;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
 }
 
 .userClass{
@@ -289,6 +304,7 @@ input{
     font-weight: bold;
     display: flex;
     justify-content: center;
+    cursor: default;
 }
 
 .loanClass{
@@ -323,6 +339,7 @@ input{
     padding-left: 7rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    cursor: default;
     /* flex-wrap: wrap; */
 }
 

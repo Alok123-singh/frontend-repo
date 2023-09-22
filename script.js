@@ -61,7 +61,9 @@ submit.addEventListener('click',function(e){
     const balanceSection = document.querySelector('.balanceClass');
     sortUser = username.value;
     if(!body.contains(balanceSection)) showDetails(username.value,password.value);
-    else alert('You are already signed in!');
+    else {
+        alert('Enter valid details!');
+    }
     
 });
 
