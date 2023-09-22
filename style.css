@@ -467,7 +467,126 @@ input{
     }
 }
 
-@media only screen and ((min-width: 405px) and (max-width: 652px)){
+@media only screen and ((min-width: 405px) and (max-width: 494px)){
+    *{
+        font-size: 20px;
+    }
+    input{
+        width: 7rem;
+    }
+    .serviceClass{
+        text-align: center;
+        padding-top: 8px;
+        /* margin-top: 5px; */
+    }
+    .userFormClass{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 40px;
+    }
+    #welcomeId{
+        font-size: large;
+    }
+    #createNewUserId{
+        flex-direction: column;
+    }
+    #createUserId{
+        height: 23px;
+    }
+    .userClass input{
+        width: 100%;
+        margin-bottom: 7px;
+    }
+    #cuClass{
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 0px;
+    }
+    #box{
+        margin: 0px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #currencyId{
+        padding-right: 0px;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    #sortId{
+        padding-right: 0px;
+        margin-top: 3rem;
+    }
+    #timerId{
+        /* padding-right: 0px; */
+        margin-top: 60px;
+        margin-right: 0px;
+    }
+    #metaId{
+        margin-bottom: 3rem;
+    }
+    .metaClass{
+        padding-left: 0px;
+    }
+    .apClass{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .moneyClass{
+        width: 90%;
+    }
+    .loanClass{
+        width: 90%;
+    }
+    .closeAccountClass{
+        width: 90%;
+    }
+    .scrollClass{
+        width: 90%;
+        margin-top: 1rem;
+    }
+    .balanceClass{
+        justify-content: center;
+        
+    }
+    .interestClass{
+        margin-top: 1rem;
+        padding-left: 24px;
+    }
+    
+    #inId{
+        color: #29ba54;
+        font-size: 19px;
+        font-weight: bold;
+    }
+    
+    #outId{
+        color: #e6053a;
+        font-size: 19px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    
+    #interestId{
+        color: #29ba54;
+        font-size: 19px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    .submitOne{
+        font-size: 15px;
+    }
+}
+
+@media only screen and ((min-width: 495px) and (max-width: 652px)){
     *{
         font-size: 20px;
     }
