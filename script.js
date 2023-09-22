@@ -60,9 +60,18 @@ submit.addEventListener('click',function(e){
     // console.log(typeof username.value,typeof password.value);
     const balanceSection = document.querySelector('.balanceClass');
     sortUser = username.value;
-    if(!body.contains(balanceSection)) showDetails(username.value,password.value);
+    if(!body.contains(balanceSection)){
+        if(username.value === "" || password.value === "")
+            alert('Empty fields recieved!');
+        else{
+            showDetails(username.value,password.value);
+        }
+    }
     else {
-        alert('Enter valid details!');
+        if(username.value === "" || password.value === "")
+            alert('Empty fields recieved!');
+        else
+            alert('Enter valid details!');
     }
     
 });
