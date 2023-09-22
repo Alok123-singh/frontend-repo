@@ -29,6 +29,7 @@ input{
     text-align: center;
     margin-left: 5px;
     cursor: pointer;
+    background-color: white;
     /* border-color: green; */
 }
 
