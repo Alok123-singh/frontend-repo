@@ -41,13 +41,19 @@ createForm.addEventListener('click',function(e){
             alert('User already exist with entered username');
         }
         else{
-            if(username.length < 1) alert('Username must have at least 2 characters!');
-            else if(username.length > 24) alert('Username can be at max 24 characters long!');
+            
+            if(username.length < 2){
+                alert('Username must have at least 2 characters!');
+            }
+            else if(username.length > 24){
+                alert('Username can be at max 24 characters long!');
+            }
             else{
                 const user = new createUser(username,password,[2000],2000);
                 users.push(user);
                 input1.value = '';
                 input2.value = '';
+                console.log(username.length());
                 alert('User created!');
             }
         }
