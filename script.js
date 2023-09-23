@@ -446,6 +446,8 @@ function createCloseAccountSection(user,div){
                     users.splice(index,1);
                     clearCurrentHTML();
                     isClosed = true;
+                    const welcome = document.querySelector('#welcomeId');
+                    welcome.innerHTML = 'Welcome back, Guest';
                 }
             })
             if(!isClosed){
