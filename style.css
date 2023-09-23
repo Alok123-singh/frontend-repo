@@ -477,6 +477,7 @@ input{
     .scrollClass{
         width: 90%;
         margin-top: 1rem;
+        padding: 6px 20px;
     }
     .balanceClass{
         justify-content: center;
@@ -626,6 +627,7 @@ input{
     .scrollClass{
         width: 90%;
         margin-top: 1rem;
+        padding: 6px 20px;
     }
     .balanceClass{
         justify-content: center;
@@ -767,6 +769,7 @@ input{
     .scrollClass{
         width: 90%;
         margin-top: 1rem;
+        padding: 6px 20px;
     }
     .balanceClass{
         justify-content: center;
@@ -892,6 +895,7 @@ input{
     .scrollClass{
         width: 90%;
         margin-top: 1rem;
+        padding: 6px 20px;
     }
     .balanceClass{
         justify-content: center;
@@ -993,8 +997,9 @@ input{
         width: 80%;
     }
     .scrollClass{
-        width: 80%;
+        width: 90%;
         margin-top: 1rem;
+        padding: 6px 20px;
     }
     .balanceClass{
         justify-content: center;
