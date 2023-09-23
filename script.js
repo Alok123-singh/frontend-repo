@@ -314,17 +314,20 @@ function createMoneySection(user,div){
                     if(!isAmountValid(inputTwo.value)){
                         alert('Invalid amount recieved!');
                     }
-                    else if(user.currentBalance+100 > amount){
-                        user.currentBalance -= amount;
-                        userElement.currentBalance += amount;
-                        user.transaction.unshift(-amount);
-                        userElement.transaction.unshift(amount);
-                        clearCurrentHTML();
-                        createNewHTML(user);
-                        
-                    }
-                    else{
-                        alert('Balance too low.')
+                    else 
+                    {
+                        if(user.currentBalance-100 > amount){
+                            user.currentBalance -= amount;
+                            userElement.currentBalance += amount;
+                            user.transaction.unshift(-amount);
+                            userElement.transaction.unshift(amount);
+                            clearCurrentHTML();
+                            createNewHTML(user);
+                            
+                        }
+                        else{
+                            alert('Balance too low.')
+                        }
                     }
                 }
             })
@@ -377,10 +380,15 @@ function createLoanSection(user,div){
         }
         else{
             if(amount > 0 && isAmountValid(inputOne.value)){
-                user.transaction.unshift(amount);
-                user.currentBalance += amount;
-                clearCurrentHTML();
-                createNewHTML(user);
+                if(amount > 100000){
+                    alert('Amount too high');
+                }
+                else{
+                    user.transaction.unshift(amount);
+                    user.currentBalance += amount;
+                    clearCurrentHTML();
+                    createNewHTML(user);
+                }
             }
             else{
                 alert('Invalid amount entered!');
