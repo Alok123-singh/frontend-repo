@@ -326,7 +326,7 @@ function createMoneySection(user,div){
                             
                         }
                         else{
-                            alert('Balance too low.')
+                            alert('Amount too high!')
                         }
                     }
                 }
@@ -381,7 +381,7 @@ function createLoanSection(user,div){
         else{
             if(amount > 0 && isAmountValid(inputOne.value)){
                 if(amount > 100000){
-                    alert('Amount too high');
+                    alert('Amount too high!');
                 }
                 else{
                     user.transaction.unshift(amount);
