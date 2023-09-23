@@ -561,7 +561,7 @@ function createSection4(user){
         console.log('sort clicked!');
     
         if(!isSorted){
-            user.transaction.sort();
+            user.transaction.sort((a,b) => a-b);
             isSorted = true;
         }
         else{
