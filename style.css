@@ -495,7 +495,7 @@ input{
         font-size: 22px;
         font-weight: bold;
         font-size: 18px;
-        margin-left: 15px;
+        margin-left: 10px;
     }
     
     #outParaId{
@@ -512,7 +512,7 @@ input{
     }
     
     #interestParaId{
-        margin-right: 7px;
+        margin-right: 3px;
         margin-left: 18px;
         font-size: 18px;
     }

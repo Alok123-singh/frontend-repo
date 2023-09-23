@@ -529,9 +529,9 @@ function createInnerMeta(user,div){
     p5.setAttribute('id','interestParaId');
     p6.setAttribute('id','interestId');
     
-    let inVar = user.currentBalance * (35 / 760);
-    let outVar = user.currentBalance * (22 / 654);
-    let interestVar = user.currentBalance * (14 / 876);
+    let inVar = user.currentBalance * (35 / 760000);
+    let outVar = user.currentBalance * (22 / 654000);
+    let interestVar = user.currentBalance * (14 / 876000);
 
     p1.innerHTML = 'IN';
     p2.innerHTML = `${inVar.toFixed(2)} ¥`;
