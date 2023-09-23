@@ -316,7 +316,7 @@ function createMoneySection(user,div){
                     }
                     else 
                     {
-                        if(user.currentBalance-100 > amount){
+                        if(user.currentBalance - 200 > amount){
                             user.currentBalance -= amount;
                             userElement.currentBalance += amount;
                             user.transaction.unshift(-amount);
