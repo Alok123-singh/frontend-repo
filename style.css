@@ -164,7 +164,7 @@ input{
 #sortId{
     margin-top: 54px;
     padding-right: 300px;
-    cursor: default;
+    cursor: cell;
 }
 
 #timerId{

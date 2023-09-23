@@ -8,7 +8,7 @@ function createUser(username,password,transaction,curr){
 }
 
 const user1 = new createUser('Ss',1111,[1427,400,230,-30,-22,-87,500,242,-10,-5000,200,52],67421);
-const user2 = new createUser('im',2222,[10,40,280,-300,-2,-14,543,-64,25,46,67,-54],9625925);
+const user2 = new createUser('Im',2222,[10,40,280,-300,-2,-14,543,-64,25,46,67,-54],9625925);
 const user3 = new createUser('Ca',3333,[1000,450,9475,1427,-50,-650,145,670,-650,650,49,60],32462);
 const user4 = new createUser('Vm',4444,[3000,130,-450,30,-224,-8,960,-540,280,-478,40,100],89242);
 
@@ -97,7 +97,17 @@ submit.addEventListener('click',function(e){
             }
 
             if(alreadySignedIn) alert('You are already signed In');
-            else alert('Enter valid details!');
+            else{
+                if(username.value === "" || password.value === ""){
+            
+                    alert('Empty fields recieved!');
+                }
+                else{
+                    showDetails(username.value,password.value);
+                    
+                }
+                // alert('Enter valid details!');
+            }
         }
     }
     username.value = '';
@@ -122,17 +132,17 @@ function showDetails(name,pass){
     const section2 = document.querySelector('#transactionId');
     const section3 = document.querySelector('#metaId');
 
-    if(body.contains(section1) == true)
-        body.removeChild(section1);
-    if(body.contains(section2) == true)
-        body.removeChild(section2);
-    if(body.contains(section3) == true)
-        body.removeChild(section3);
-    
     if(name !== ""){
         let valid = false;
         users.forEach( function(user){
             if(user.username.toUpperCase() === name.toUpperCase() && user.password == pass){
+                if(body.contains(section1) == true)
+                    body.removeChild(section1);
+                if(body.contains(section2) == true)
+                    body.removeChild(section2);
+                if(body.contains(section3) == true)
+                    body.removeChild(section3);
+    
                 console.log(user.username);
                 modifySection1(user.username);
                 createSection2(user.currentBalance);
