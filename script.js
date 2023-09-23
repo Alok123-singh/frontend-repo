@@ -326,7 +326,7 @@ function createMoneySection(user,div){
                             
                         }
                         else{
-                            alert('Amount too high!')
+                            alert('Amount too high or balance too low!')
                         }
                     }
                 }
