@@ -51,32 +51,57 @@ createForm.addEventListener('click',function(e){
     else{
         alert('Empty fields recieved!');
     }
+    input1.value = '';
+    input2.value = '';
 })
 
-let sortUser = '';
 submit.addEventListener('click',function(e){
     e.preventDefault();
     console.log(username.value,password.value);
     // console.log(typeof username.value,typeof password.value);
     const balanceSection = document.querySelector('.balanceClass');
-    sortUser = username.value;
     if(!body.contains(balanceSection)){
-        if(username.value === "" || password.value === "")
+        if(username.value === "" || password.value === ""){
+            
             alert('Empty fields recieved!');
+        }
         else{
             showDetails(username.value,password.value);
+            
         }
     }
     else {
-        if(username.value === "" || password.value === "")
+        if(username.value === "" || password.value === ""){
+            
             alert('Empty fields recieved!');
+        }
         else{
-            alert('Enter valid details!');
+            let alreadySignedIn = false;
+
+            const Welcome = document.querySelector('#welcomeId');
+            const val = Welcome.innerHTML;
+            const str = val.substring(14);
+            console.log(str);
+
+            if(username.value.toUpperCase() === str.toUpperCase()){
+                users.forEach(function(user){
+                    const stringValue = user.password.toString();
+                    if(user.username.toUpperCase() == str.toUpperCase()){
+                        if(stringValue === password.value){
+                            alreadySignedIn = true;
+                        }
+                        console.log(typeof password.value,password.value);
+                        console.log(typeof user.password,user.password);
+                    }
+                });
+            }
+
+            if(alreadySignedIn) alert('You are already signed In');
+            else alert('Enter valid details!');
         }
     }
     username.value = '';
     password.value = '';
-    
 });
 
 // const sortButton = document.querySelector("#sortId");
@@ -275,14 +300,18 @@ function createMoneySection(user,div){
             let valid = false;
             users.forEach(function(userElement){
                 if(userElement.username.toUpperCase() === transferTo.toUpperCase()){
-                    if(user.currentBalance+100 > amount){
+                    valid = true;
+                    if(!isAmountValid(inputTwo.value)){
+                        alert('Invalid amount recieved!');
+                    }
+                    else if(user.currentBalance+100 > amount){
                         user.currentBalance -= amount;
                         userElement.currentBalance += amount;
                         user.transaction.unshift(-amount);
                         userElement.transaction.unshift(amount);
                         clearCurrentHTML();
                         createNewHTML(user);
-                        valid = true;
+                        
                     }
                     else{
                         alert('Balance too low.')
@@ -294,9 +323,10 @@ function createMoneySection(user,div){
         else{
             alert('Empty fields recieved!');
         }
+        inputOne.value = '';
+        inputTwo.value = '';
     });
-    inputOne.value = '';
-    inputTwo.value = '';
+    
 }
 
 function createLoanSection(user,div){
@@ -336,7 +366,7 @@ function createLoanSection(user,div){
             alert('Empty fields recieved!');
         }
         else{
-            if(amount > 0){
+            if(amount > 0 && isAmountValid(inputOne.value)){
                 user.transaction.unshift(amount);
                 user.currentBalance += amount;
                 clearCurrentHTML();
@@ -346,8 +376,8 @@ function createLoanSection(user,div){
                 alert('Invalid amount entered!');
             }
         }
+        inputOne.value = '';
     });
-    inputOne.value = '';
 }
 
 function createCloseAccountSection(user,div){
@@ -414,9 +444,9 @@ function createCloseAccountSection(user,div){
 
         }
 
+        inputOne.value = '';
+        inputTwo.value = '';
     });
-    inputOne.value = '';
-    inputTwo.value = '';
 
 }
 
@@ -574,4 +604,14 @@ function isValid(str,pat){
     return tempString.toUpperCase() == pat.toUpperCase();
 }
 
-
+function isAmountValid(amount){
+    if(amount[0] == '0') return (false);
+    let isValid = true;
+    let str = String('Alok');
+    console.log(typeof amount);
+    Array.from(amount).forEach(function(character){
+        if(!(character >= '0' && character <= '9'))
+            isValid = false;
+    })
+    return (isValid);
+}

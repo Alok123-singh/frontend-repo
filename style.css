@@ -106,7 +106,7 @@ input{
 }
 
 #welcomeId{
-    cursor: pointer;
+    cursor: default;
     font-size: larger;
 }
 
@@ -164,7 +164,7 @@ input{
 #sortId{
     margin-top: 54px;
     padding-right: 300px;
-    cursor: pointer;
+    cursor: default;
 }
 
 #timerId{
@@ -226,7 +226,7 @@ input{
     justify-content: center;
     /* margin-right: 401px; */
     margin-top: 1rem;
-    cursor: pointer;
+    cursor: default;
 
     /* flex-wrap: wrap; */
 }
@@ -248,7 +248,7 @@ input{
     justify-content: space-between;
     /* margin-right: 3rem; */
     margin-bottom: 2rem;
-    cursor: pointer;
+    cursor: default;
 }
 
 .labelClass{
