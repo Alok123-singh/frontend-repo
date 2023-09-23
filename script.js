@@ -33,7 +33,7 @@ createForm.addEventListener('click',function(e){
         console.log(`${username} ${password}`);
         let isPresent = false;
         users.forEach(function(user){
-            if(user.username === username)
+            if(user.username.toUpperCase() === username.toUpperCase())
                 isPresent = true;
         })
 
