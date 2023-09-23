@@ -435,6 +435,7 @@ input{
         justify-content: center;
         align-items: center;
         text-align: center;
+        margin-left: -5px;
     }
     #currencyId{
         padding-right: 0px;
