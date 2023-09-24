@@ -357,7 +357,7 @@ function createMoneySection(user,div){
                             
                         }
                         else{
-                            alert('Amount too high or balance too low!')
+                            alert('Balance must be at least 200 Rs!')
                         }
                     }
                 }
@@ -412,7 +412,7 @@ function createLoanSection(user,div){
         else{
             if(amount > 0 && isAmountValid(inputOne.value)){
                 if(amount > 100000){
-                    alert('Amount too high!');
+                    alert('You can take a loan upto 1 lakh only at a time!');
                 }
                 else{
                     user.transaction.unshift(amount);
