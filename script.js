@@ -56,7 +56,7 @@ createForm.addEventListener('click',function(e){
                 users.push(user);
                 input1.value = '';
                 input2.value = '';
-                console.log(username.length());
+                console.log(username);
                 alert('User created!');
             }
         }
