@@ -21,6 +21,9 @@ const createForm = document.querySelector('#createUserId');
 
 const users = [user1,user2,user3,user4];
 
+let tempSortedArray = [];
+let sortingState = 0;
+
 createForm.addEventListener('click',function(e){
     e.preventDefault();
     const input1 = document.querySelector('#userSubmitId');
@@ -152,7 +155,10 @@ function showDetails(name,pass){
                     body.removeChild(section2);
                 if(body.contains(section3) == true)
                     body.removeChild(section3);
-    
+                
+                // assinging to the all current transactions of user
+                sortingState = 0;
+
                 console.log(user.username);
                 modifySection1(user.username);
                 createSection2(user.currentBalance);
@@ -244,12 +250,21 @@ function createNewDepositSection(category,amount){
 // this.currentBalance = curr;
 
 function createInnerSection1(user,div){
+    let = lastTransaction = true;
     user.transaction.forEach(function(element){
         if(element > 0){
-            div.appendChild(createNewDepositSection('Deposit',element));
+            if(lastTransaction == true && sortingState == 0)
+                div.appendChild(createNewDepositSection('Deposit LT',element));
+            else
+                div.appendChild(createNewDepositSection('Deposit',element));
+            lastTransaction = false;
         }
         else{
-            div.appendChild(createNewDepositSection('Withdrawal',element));
+            if(lastTransaction == true && sortingState == 0)
+                div.appendChild(createNewDepositSection('Withdrawal LT',element));
+            else
+                div.appendChild(createNewDepositSection('Withdrawal',element));
+            lastTransaction = false;
         }
     })
 }
@@ -330,6 +345,12 @@ function createMoneySection(user,div){
                             user.currentBalance -= amount;
                             userElement.currentBalance += amount;
                             user.transaction.unshift(-amount);
+                            if(sortingState == 1){
+                                user.transaction.sort((a,b) => (b-a));
+                            }
+                            else if(sortingState == 2){
+                                user.transaction.sort((a,b) => (a-b));
+                            }
                             userElement.transaction.unshift(amount);
                             clearCurrentHTML();
                             createNewHTML(user);
@@ -395,6 +416,12 @@ function createLoanSection(user,div){
                 }
                 else{
                     user.transaction.unshift(amount);
+                    if(sortingState == 1){
+                        user.transaction.sort((a,b) => (b-a));
+                    }
+                    else if(sortingState == 2){
+                        user.transaction.sort((a,b) => (a-b));
+                    }
                     user.currentBalance += amount;
                     clearCurrentHTML();
                     createNewHTML(user);
@@ -572,22 +599,45 @@ function createSection4(user){
     innerDiv2.setAttribute('id','sortId');
     innerDiv3.setAttribute('id','timerId');
 
-    innerDiv2.innerHTML = '↓Sort';
+    if(sortingState == 0){
+        innerDiv2.innerHTML = '↑SORT';
+    }
+    if(sortingState == 1)
+        innerDiv2.innerHTML = '↓SORT';
+    if(sortingState == 2)
+        innerDiv2.innerHTML = 'SORT';
+
+    // innerDiv2.innerHTML = '↑SORT';
+
     innerDiv3.innerHTML = 'You will be logged out in 30:00';
 
+    // ↓↑
     innerDiv2.addEventListener('click',function(e){
         e.preventDefault();
+        sortingState = (sortingState + 1) % 3;
         const name = username.value;
         console.log('sort clicked!');
-    
-        if(!isSorted){
-            user.transaction.sort((a,b) => a-b);
-            isSorted = true;
+        
+        
+        if(sortingState == 0){
+            user.transaction.splice(0,user.transaction.length);
+            tempSortedArray.forEach(function(element){
+                user.transaction.push(element);
+            });
         }
-        else{
+        else if(sortingState == 1){
+            tempSortedArray.splice(0,tempSortedArray.length);
+            user.transaction.forEach(function(element){
+                tempSortedArray.push(element);
+            });
             user.transaction.sort((a,b) => b-a);
-            isSorted = false;
         }
+        else if(sortingState == 2){
+            user.transaction.sort((a,b) => a-b);
+        }
+        console.log(tempSortedArray);
+        console.log(user.transaction);
+
         clearCurrentHTML();
         createNewHTML(user);
     });
