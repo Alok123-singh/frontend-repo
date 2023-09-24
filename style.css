@@ -392,8 +392,8 @@ input{
 @media only screen and (max-width: 394px){
     body{
         /* background-image: url("images/black.jpg"); */
-        /* background-position: 0px 0px; */
-        background-repeat:no-repeat;
+        background-position: 0px 0px;
+        background-repeat:repeat;
         background-size: cover;
         animation: none;
         /* background-color: #d5dbdb; */
@@ -578,8 +578,8 @@ input{
 @media only screen and ((min-width: 395px) and (max-width: 404px)){
     body{
         /* background-image: url("images/black.jpg"); */
-        /* background-position: 0px 0px; */
-        background-repeat:no-repeat;
+        background-position: 0px 0px;
+        background-repeat:repeat;
         background-size: cover;
         animation: none;
         /* background-color: #d5dbdb; */
@@ -759,8 +759,8 @@ input{
 @media only screen and ((min-width: 405px) and (max-width: 494px)){
     body{
         /* background-image: url("images/black.jpg"); */
-        /* background-position: 0px 0px; */
-        background-repeat:no-repeat;
+        background-position: 0px 0px;
+        background-repeat:repeat;
         background-size: cover;
         animation: none;
         /* background-color: #d5dbdb; */
@@ -917,6 +917,15 @@ input{
 }
 
 @media only screen and ((min-width: 495px) and (max-width: 652px)){
+    body{
+        /* background-image: url("images/black.jpg"); */
+        background-position: 0px 0px;
+        background-repeat:repeat;
+        background-size: cover;
+        animation: none;
+        /* background-color: #d5dbdb; */
+        /* color: white; */
+    }
     *{
         font-size: 20px;
     }
