@@ -17,8 +17,8 @@ body{
     background-image: url("images/black.jpg");
     background-position: 0px 0px;
     background-repeat: repeat;
-    background-size: cover;
-    /* animation: animatedBackground 10s linear infinite alternate; */
+    background-size: 90%;
+    animation: animatedBackground 14s linear infinite alternate;
     background-color: #d5dbdb;
     /* color: white; */
 }
