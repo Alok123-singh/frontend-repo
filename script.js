@@ -609,7 +609,7 @@ function createSection4(user){
 
     // innerDiv2.innerHTML = '↑SORT';
 
-    innerDiv3.innerHTML = 'You will be logged out in 3:00';
+    innerDiv3.innerHTML = 'You will be logged out in 5:00';
 
     // ↓↑
     innerDiv2.addEventListener('click',function(e){
@@ -645,7 +645,7 @@ function createSection4(user){
     body.appendChild(section);
 }
 
-let countdownTime = 3 * 60;
+let countdownTime = 5 * 60;
 
 function updateTimer() {
     let minutes = Math.floor(countdownTime / 60);
@@ -661,7 +661,7 @@ function updateTimer() {
         clearCurrentHTML();
         welcome = document.querySelector('#welcomeId');
         welcome.innerHTML = 'Welcome back, Guest';
-        countdownTime = 3 * 60;
+        countdownTime = 5 * 60;
     // Timer has reached zero
         // document.querySelector('#timerId').innerHTML = "Time's up!";
     }
