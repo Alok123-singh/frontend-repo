@@ -37,11 +37,11 @@ body{
   .overlay {
     position: absolute;
     bottom: 100%;
-    left: 8rem;
+    left: 3rem;
     right: 0;
     background-color: #be315e;
     overflow: hidden;
-    width: 49%;
+    width: 72%;
     height: 0;
     transition: .5s ease;
   }
@@ -194,7 +194,7 @@ input{
 .imageTwo{
     height: 80px;
     width: 120px;
-    margin-left: 8rem;
+    margin-left: 3rem;
 }
 
 .submitOne{
