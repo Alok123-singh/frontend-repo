@@ -203,7 +203,7 @@ function createSection2(balance){
     // p2.innerHTML = 'As of 19/09/2023';
     p2.innerHTML = `As of ${date}`;
     
-    innerDiv2.innerHTML = `${balance} ¥`;
+    innerDiv2.innerHTML = `${balance} $`;
 
     body.appendChild(section);
 }
@@ -357,7 +357,7 @@ function createMoneySection(user,div){
                             
                         }
                         else{
-                            alert('Balance must be at least 200 Rs!')
+                            alert('Balance must be at least 200 $!')
                         }
                     }
                 }
@@ -412,7 +412,7 @@ function createLoanSection(user,div){
         else{
             if(amount > 0 && isAmountValid(inputOne.value)){
                 if(amount > 100000){
-                    alert('You can take a loan upto 1 lakh only at a time!');
+                    alert('You can take a loan upto 1 lakh $ only at a time!');
                 }
                 else{
                     user.transaction.unshift(amount);
@@ -571,11 +571,11 @@ function createInnerMeta(user,div){
     let interestVar = user.currentBalance * (14 / 876000);
 
     p1.innerHTML = 'IN';
-    p2.innerHTML = `${inVar.toFixed(2)} ¥`;
+    p2.innerHTML = `${inVar.toFixed(2)} $`;
     p3.innerHTML = 'OUT';
-    p4.innerHTML = `${outVar.toFixed(2)} ¥`;
+    p4.innerHTML = `${outVar.toFixed(2)} $`;
     p5.innerHTML = 'INTEREST';
-    p6.innerHTML = `${interestVar.toFixed(2)} ¥`;
+    p6.innerHTML = `${interestVar.toFixed(2)} $`;
 }
 
 function createSection4(user){
