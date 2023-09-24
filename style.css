@@ -292,7 +292,7 @@ input{
 .trClass{
     display: flex;
     justify-content:space-between;
-    margin-top: 23px;
+    margin-top: 22px;
     /* margin-bottom : 40px; */
     border-bottom: 1px solid black;
     padding-bottom: 23px;
@@ -304,9 +304,10 @@ input{
     color: whitesmoke;
     background-color: #08803e;
     height: 20px;
-    width: 120px;
+    width: 130px;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 11px;
     font-size: 15px;
     cursor: pointer;
@@ -317,9 +318,10 @@ input{
     background-color : #e6053a;
     color: whitesmoke;
     height: 20px;
-    width: 120px;
+    width: 130px;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 11px;
     font-size: 15px;
     cursor: pointer;
