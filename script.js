@@ -48,8 +48,8 @@ createForm.addEventListener('click',function(e){
             if(username.length < 2){
                 alert('Username must have at least 2 characters!');
             }
-            else if(username.length > 24){
-                alert('Username can be at max 24 characters long!');
+            else if(username.length > 16){
+                alert('Username can be at max 16 characters long!');
             }
             else{
                 const user = new createUser(username,password,[2000],2000);
