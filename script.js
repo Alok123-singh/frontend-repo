@@ -661,6 +661,7 @@ function updateTimer() {
         clearCurrentHTML();
         welcome = document.querySelector('#welcomeId');
         welcome.innerHTML = 'Welcome back, Guest';
+        countdownTime = 3 * 60;
     // Timer has reached zero
         // document.querySelector('#timerId').innerHTML = "Time's up!";
     }
