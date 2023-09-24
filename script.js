@@ -609,7 +609,7 @@ function createSection4(user){
 
     // innerDiv2.innerHTML = '↑SORT';
 
-    innerDiv3.innerHTML = 'You will be logged out in 30:00';
+    innerDiv3.innerHTML = 'You will be logged out in 3:00';
 
     // ↓↑
     innerDiv2.addEventListener('click',function(e){
@@ -645,7 +645,7 @@ function createSection4(user){
     body.appendChild(section);
 }
 
-let countdownTime = 30 * 60;
+let countdownTime = 3 * 60;
 
 function updateTimer() {
     let minutes = Math.floor(countdownTime / 60);
@@ -658,8 +658,11 @@ function updateTimer() {
     if (countdownTime > 0) {
     countdownTime--;
     } else {
+        clearCurrentHTML();
+        welcome = document.querySelector('#welcomeId');
+        welcome.innerHTML = 'Welcome back, Guest';
     // Timer has reached zero
-    document.querySelector('#timerId').innerHTML = "Time's up!";
+        // document.querySelector('#timerId').innerHTML = "Time's up!";
     }
 }
 
