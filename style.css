@@ -79,6 +79,7 @@ body{
     height: 90px;
     transform-style: preserve-3d;
     animation: turn 5s linear infinite;
+    cursor: pointer;
   }
   
   .face {
