@@ -759,15 +759,17 @@ setInterval(updateTimer, 1000);
 
   function saveDataPeriodically() {
     setInterval(() => {
-        // console.log(localStorage);
+        console.log(users);
         saveData(users);
-        console.log('Data has been saved to local storage');
     }, 5000); // Save every 5 seconds (adjust the interval as needed)
   }
 
   saveDataPeriodically();
 
-  users = getFromLocalStorage()
+  const tempUsers = getFromLocalStorage();
+  if(tempUsers.length != 0){
+    users = tempUsers;
+  }
 
 function isValid(str,pat){
     const array = str.split(' ');
@@ -777,7 +779,7 @@ function isValid(str,pat){
     });
     // console.log(tempString);
     return tempString.toUpperCase() == pat.toUpperCase();
- }
+}
 
 function isAmountValid(amount){
     if(amount[0] == '0') return (false);
