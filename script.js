@@ -708,6 +708,7 @@ function getFromLocalStorage() {
 // Function to periodically save the data
 function saveDataPeriodically() {
     setInterval(() => {
+        if(!localStorage) return;
         console.log(localStorage);
         saveToLocalStorage(users);
         console.log('Data has been saved to local storage');
