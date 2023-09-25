@@ -21,8 +21,18 @@ const createForm = document.querySelector('#createUserId');
 
 const users = [user1,user2,user3,user4];
 
+const cube = document.querySelector('.cube');
 let tempSortedArray = [];
 let sortingState = 0;
+
+cube.addEventListener('click',function(e){
+    const ret = clearCurrentHTML();
+    if(ret == 1) return;
+    welcome = document.querySelector('#welcomeId');
+    welcome.innerHTML = 'Welcome back, Guest';
+    countdownTime = 5 * 60;
+    alert('You are logged out !');
+});
 
 createForm.addEventListener('click',function(e){
     e.preventDefault();
@@ -271,6 +281,10 @@ function createInnerSection1(user,div){
 
 function clearCurrentHTML(){
     const section1 = document.querySelector('.balanceClass');
+    if(!body.contains(section1)){
+        alert('You are not logged in !');
+        return 1;
+    }
     const section2 = document.querySelector('#transactionId');
     const section3 = document.querySelector('#metaId');
     body.removeChild(section1);
@@ -662,6 +676,7 @@ function updateTimer() {
         welcome = document.querySelector('#welcomeId');
         welcome.innerHTML = 'Welcome back, Guest';
         countdownTime = 5 * 60;
+        alert('You are logged out !');
     // Timer has reached zero
         // document.querySelector('#timerId').innerHTML = "Time's up!";
     }
@@ -699,3 +714,7 @@ function isAmountValid(amount){
     })
     return (isValid);
 }
+
+
+
+

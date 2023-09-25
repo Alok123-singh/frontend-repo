@@ -51,6 +51,86 @@ body{
     height: 100%;
   }
   
+  .cubeContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container1 {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; */
+    width: 200px;
+    height: 200px;
+    perspective: 500px;
+    margin-top: 10px ;
+    /* margin-bottom: -45px; */
+    margin-left: 93px;
+  }
+  
+  .cube {
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* align-items: end; */
+    position: relative;
+    width: 120px;
+    height: 120px;
+    transform-style: preserve-3d;
+    animation: turn 5s linear infinite;
+  }
+  
+  .face {
+    width: 120px;
+    height: 120px;
+    background: skyblue;
+    border: 2px solid black;
+    position: absolute;
+    opacity: 0.5;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+  }
+
+  .front {
+    transform: translateZ(60px);
+  }
+
+  .back {
+    transform: translateZ(-60px) rotateY(180deg);
+  }
+
+  .left {
+    transform: translateX(-60px) rotateY(-90deg);
+  }
+  
+  .right {
+    transform: translateX(60px) rotateY(90deg);
+  }
+
+  .top {
+    transform: translateY(-60px) rotateX(90deg);
+  }
+  
+  .bottom {
+    transform: translateY(60px) rotateX(-90deg);
+  }
+
+  @keyframes turn {
+    from { transform: rotate3d(0, 0, 0, 0); }
+    to { transform: rotate3d(1, 1, 0, 360deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cube {
+      animation: none;
+      transform: rotate3d(1, 1, 0, 45deg);
+    }
+  }
+
   .text {
     white-space: nowrap; 
     color: white;
@@ -73,8 +153,10 @@ input{
     /* border-color: green; */
 }
 
-
 #box{
+    height: 30vh;
+    justify-content: center;
+    align-items: center;
     display: flex;
     justify-content: space-between;
     margin: 2rem 2rem;
@@ -399,6 +481,18 @@ input{
         /* background-color: #d5dbdb; */
         /* color: white; */
     }
+    .container1 {
+        /* display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center; */
+        width: 200px;
+        height: 200px;
+        perspective: 500px;
+        margin-top: 90px ;
+        margin-bottom: -50px;
+        margin-left: 93px;
+      }
     .container {
         position: relative;
         /* width: 10%; */
@@ -585,6 +679,18 @@ input{
         /* background-color: #d5dbdb; */
         /* color: white; */
     }
+    .container1 {
+        /* display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center; */
+        width: 200px;
+        height: 200px;
+        perspective: 500px;
+        margin-top: 60px ;
+        margin-bottom: -50px;
+        margin-left: 93px;
+      }
     .container {
         position: relative;
         /* width: 10%; */
@@ -766,6 +872,18 @@ input{
         /* background-color: #d5dbdb; */
         /* color: white; */
     }
+    .container1 {
+        /* display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center; */
+        width: 200px;
+        height: 200px;
+        perspective: 500px;
+        margin-top: 50px ;
+        margin-bottom: -60px;
+        margin-left: 93px;
+    }
     *{
         font-size: 20px;
     }
@@ -926,6 +1044,18 @@ input{
         /* background-color: #d5dbdb; */
         /* color: white; */
     }
+    .container1 {
+        /* display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center; */
+        width: 200px;
+        height: 200px;
+        perspective: 500px;
+        margin-top: 60px ;
+        margin-bottom: -60px;
+        margin-left: 93px;
+      }
     *{
         font-size: 20px;
     }
@@ -1071,7 +1201,18 @@ input{
 } 
 
 @media only screen and ((min-width: 653px) and (max-width: 824px)) {
-    
+    .container1 {
+        /* display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center; */
+        width: 200px;
+        height: 200px;
+        perspective: 500px;
+        margin-top: 60px ;
+        margin-bottom: -20px;
+        margin-left: 93px;
+      }
     .userFormClass{
         flex-direction: column;
         width: 100%;
@@ -1154,6 +1295,18 @@ input{
 }
 
 @media only screen and ((min-width: 825px) and (max-width: 958px)) {
+    .container1 {
+        /* display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center; */
+        width: 200px;
+        height: 200px;
+        perspective: 500px;
+        margin-top: 30px ;
+        margin-bottom: -5px;
+        margin-left: 93px;
+      }
     .metaClass{
         padding-left: 4rem;
     }
