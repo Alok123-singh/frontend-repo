@@ -19,7 +19,7 @@ const submit = document.querySelector('.submitOne');
 const body = document.querySelector('body');
 const createForm = document.querySelector('#createUserId');
 
-const users = [user1,user2,user3,user4];
+let users = [user1,user2,user3,user4];
 
 const cube = document.querySelector('.cube');
 let tempSortedArray = [];
@@ -666,6 +666,7 @@ function updateTimer() {
     let seconds = countdownTime % 60;
 
     const timerVar = document.querySelector('#timerId');
+    if(!body.contains(timerVar)) return;
     // Display the time in the "timer" div
     timerVar.innerHTML = 'You will be logged out in ' + minutes + ":" + seconds;
     
@@ -693,6 +694,33 @@ setInterval(updateTimer, 1000);
 // Start the countdown timer
 // updateTimer();
 
+// Function to save the array to local storage
+function saveToLocalStorage(data) {
+    localStorage.setItem('myData', JSON.stringify(data));
+}
+
+// Function to retrieve the array from local storage
+function getFromLocalStorage() {
+    const data = localStorage.getItem('myData');
+    return JSON.parse(data);
+}
+
+// Function to periodically save the data
+function saveDataPeriodically() {
+    setInterval(() => {
+        console.log(localStorage);
+        saveToLocalStorage(users);
+        console.log('Data has been saved to local storage');
+    }, 5000); // Save every 5 seconds (adjust the interval as needed)
+}
+
+// Start saving data periodically
+saveDataPeriodically();
+
+// Later, when you want to retrieve the data
+users = getFromLocalStorage()
+
+
 function isValid(str,pat){
     const array = str.split(' ');
     let tempString = "";
@@ -701,7 +729,7 @@ function isValid(str,pat){
     });
     // console.log(tempString);
     return tempString.toUpperCase() == pat.toUpperCase();
-}
+ }
 
 function isAmountValid(amount){
     if(amount[0] == '0') return (false);
