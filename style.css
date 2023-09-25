@@ -1317,6 +1317,9 @@ input{
     #timerId{
         margin-right: 70px;
     }
+    #welcomeId{
+        margin-left: 0px;
+    }
 }
 
 @media only screen and ((min-width: 494px) and (max-width: 823px)) {
