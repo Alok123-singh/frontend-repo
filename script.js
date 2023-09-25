@@ -694,33 +694,80 @@ setInterval(updateTimer, 1000);
 // Start the countdown timer
 // updateTimer();
 
-// Function to save the array to local storage
-function saveToLocalStorage(data) {
-    localStorage.setItem('myData', JSON.stringify(data));
-}
+// Function to save data to local storage
+  function saveData(data) {
+    try {
+      // Check if local storage is available
+      if (typeof Storage !== "undefined") {
+        // Convert the data to JSON string
+        const dataJSON = JSON.stringify(data);
+        
+        // Save the JSON string in local storage
+        localStorage.setItem("myData", dataJSON);
+        console.log("Data saved to local storage.");
+      } else {
+        // Local storage is not available; use an alternative storage method
+        // For example, you can use session storage or cookies as fallbacks
+        // Example using session storage:
+        sessionStorage.setItem("myData", JSON.stringify(data));
+        console.warn("Local storage is not available; data saved to session storage.");
+      }
+    } catch (error) {
+      // Handle any errors that may occur during storage
+      console.error("Error saving data:", error);
+    }
+  }
+  
+  // Function to get data from local storage
+  function getData() {
+    try {
+      if (typeof Storage !== "undefined") {
+        // Attempt to retrieve data from local storage
+        const dataJSON = localStorage.getItem("myData");
+        
+        // If dataJSON is not null, parse it back to the original data format
+        if (dataJSON !== null) {
+          const data = JSON.parse(dataJSON);
+          console.log("Data retrieved from local storage.");
+          return data;
+        }
+      } else {
+        // Local storage is not available; try to retrieve from session storage
+        const sessionDataJSON = sessionStorage.getItem("myData");
+        if (sessionDataJSON !== null) {
+          const data = JSON.parse(sessionDataJSON);
+          console.warn("Local storage is not available; data retrieved from session storage.");
+          return data;
+        }
+      }
+      
+      // If no data was found, return a default value or handle the situation as needed
+      return users;
+    } catch (error) {
+      // Handle any errors that may occur during retrieval
+      console.error("Error retrieving data:", error);
+      return users;
+    }
+  }
+  
+  // Set an interval to update and save data every 5 seconds (5000 milliseconds)
+  const updateInterval = 5000;
 
-// Function to retrieve the array from local storage
-function getFromLocalStorage() {
-    const data = localStorage.getItem('myData');
-    return JSON.parse(data);
-}
+  function getFromLocalStorage() {
+    return getData();
+  }
 
-// Function to periodically save the data
-function saveDataPeriodically() {
+  function saveDataPeriodically() {
     setInterval(() => {
-        if(!localStorage) return;
-        console.log(localStorage);
-        saveToLocalStorage(users);
+        // console.log(localStorage);
+        saveData(users);
         console.log('Data has been saved to local storage');
     }, 5000); // Save every 5 seconds (adjust the interval as needed)
-}
+  }
 
-// Start saving data periodically
-saveDataPeriodically();
+  saveDataPeriodically();
 
-// Later, when you want to retrieve the data
-users = getFromLocalStorage()
-
+  users = getFromLocalStorage()
 
 function isValid(str,pat){
     const array = str.split(' ');
